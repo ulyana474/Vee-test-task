@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type GrantOpportunityCard {
+  id: String!
+  grantId: String!
+  foundationName: String!
+  grantName: String!
+  averageAmount: Float!
+  deadline: DateTime!
+  location: String!
+  areas: [String!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type GetGrantOpportunityCardsResponse {
+  edges: [GrantOpportunityCard!]!
+}
+
+type Grant {
+  id: String!
+  grantId: String!
+  foundationName: String!
+  grantName: String!
+  averageAmount: Float!
+  deadline: DateTime!
+  matchDate: DateTime!
+  location: String!
+  status: String!
+  areas: [String!]!
+}
+
+type GetApprovedGrantOpportunitiesResponse {
+  edges: [Grant!]!
+}
+
+type Query {
+  getGrantOpportunityCards: GetGrantOpportunityCardsResponse!
+  getApprovedGrantOpportunities: GetApprovedGrantOpportunitiesResponse!
+}
+
+type Mutation {
+  approveGrantOpportunity(opportunityId: String!): Boolean!
+  disapproveGrantOpportunity(opportunityId: String!): Boolean!
+}
