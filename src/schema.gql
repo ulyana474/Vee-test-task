@@ -28,6 +28,5 @@ type Query {
 }
 
 type Mutation {
-  approveGrantOpportunity(opportunityId: String!): Boolean!
-  disapproveGrantOpportunity(opportunityId: String!): Boolean!
+  updateGrantOpportunity(opportunityId: String!, isApproved: Boolean!): Boolean!
 }

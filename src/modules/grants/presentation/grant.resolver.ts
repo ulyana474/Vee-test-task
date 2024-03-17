@@ -14,20 +14,13 @@ export class GrantResolver {
   }
 
   @Mutation(() => Boolean)
-  public async approveGrantOpportunity(
+  public async updateGrantOpportunity(
     @Args({ name: 'opportunityId', type: () => String }) opportunityId: string,
+    @Args({ name: 'isApproved', type: () => Boolean}) isApproved: boolean
   ): Promise<boolean> {
-    await this.grantsService.approveGrantOpportunity(opportunityId);
+    await this.grantsService.updateGrantOpportunity(opportunityId, isApproved);
 
     return true;
   }
 
-  @Mutation(() => Boolean)
-  public async disapproveGrantOpportunity(
-    @Args({ name: 'opportunityId', type: () => String }) opportunityId: string,
-  ): Promise<boolean> {
-    await this.grantsService.disapproveGrantOpportunity(opportunityId);
-
-    return true;
-  }
 }

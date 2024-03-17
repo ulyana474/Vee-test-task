@@ -27,14 +27,13 @@ export class GrantsService {
     });
   }
 
-  public async approveGrantOpportunity(id: string): Promise<void> {
+  public async updateGrantOpportunity(id: string, isApproved: boolean = true): Promise<void> {
+    if (!isApproved) {
+      await this.grantsRepo.softDeleteGrantOpportunityById(id)
+    }
     await this.grantsRepo.updateGrantOpportunityStatus(
       id,
       GrantStatus.ACCEPTED,
     );
-  }
-
-  public async disapproveGrantOpportunity(id: string): Promise<void> {
-    await this.grantsRepo.softDeleteGrantOpportunityById(id);
   }
 }
