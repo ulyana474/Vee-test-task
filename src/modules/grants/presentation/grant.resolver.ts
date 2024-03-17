@@ -1,7 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { GrantsService } from '../application/grants.service';
 import { GetGrantOpportunityCardsResponseDTO as GetGrantOpportunityCardsResponseDTO } from './dtos/get-grant-opportunity-cards-response.dto';
-import { GetApprovedGrantOpportunitiesResponseDTO } from './dtos/get-approved-grant-opportunities.dto';
 
 @Resolver()
 export class GrantResolver {
@@ -10,13 +9,6 @@ export class GrantResolver {
   @Query(() => GetGrantOpportunityCardsResponseDTO)
   public async getGrantOpportunityCards(): Promise<GetGrantOpportunityCardsResponseDTO> {
     const edges = await this.grantsService.getNewGrantOpportunities();
-    
-    return { edges };
-  }
-
-  @Query(() => GetApprovedGrantOpportunitiesResponseDTO)
-  public async getApprovedGrantOpportunities(): Promise<GetApprovedGrantOpportunitiesResponseDTO> {
-    const edges = await this.grantsService.getApprovedGrantOpportunities();
 
     return { edges };
   }

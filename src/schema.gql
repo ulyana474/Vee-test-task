@@ -23,26 +23,8 @@ type GetGrantOpportunityCardsResponse {
   edges: [GrantOpportunityCard!]!
 }
 
-type Grant {
-  id: String!
-  grantId: String!
-  foundationName: String!
-  grantName: String!
-  averageAmount: Float!
-  deadline: DateTime!
-  matchDate: DateTime!
-  location: String!
-  status: String!
-  areas: [String!]!
-}
-
-type GetApprovedGrantOpportunitiesResponse {
-  edges: [Grant!]!
-}
-
 type Query {
   getGrantOpportunityCards: GetGrantOpportunityCardsResponse!
-  getApprovedGrantOpportunities: GetApprovedGrantOpportunitiesResponse!
 }
 
 type Mutation {
