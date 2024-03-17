@@ -23,6 +23,9 @@ export class GrantOpportunityCardDTO {
   @Field()
   location: string;
 
+  @Field()
+  status: string;
+
   @Field(() => [String])
   areas: string[];
 }

@@ -10,7 +10,7 @@ export class GrantsService {
 
   public async getNewGrantOpportunities(): Promise<GrantOpportunityCardDTO[]> {
     const matches = await this.grantsRepo.getGrantOpportunities({
-      statuses: [GrantStatus.CREATED],
+      statuses: Object.values(GrantStatus),
     });
 
     return matches.map((match) => {
@@ -23,6 +23,7 @@ export class GrantsService {
         foundationName: match.grant!.foundation!.name,
         grantName: match.grant!.grantName,
         location: match.grant!.location,
+        status: match.status,
       };
     });
   }

@@ -10,6 +10,7 @@ type GrantOpportunityCard {
   averageAmount: Float!
   deadline: DateTime!
   location: String!
+  status: String!
   areas: [String!]!
 }
 

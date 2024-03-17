@@ -39,46 +39,46 @@ export class GrantsSeed implements OnModuleInit {
       '_id' | 'id' | 'foundationId' | 'foundation'
     >[] = [
       {
-        averageAmount: 55.55,
+        averageAmount: 55000,
         deadline: new Date(),
         grantName: 'Riska',
         location: 'Tbilisi, Georgia',
-        areas: ['education', 'healthcare'],
+        areas: ['food'],
       },
       {
-        averageAmount: 55.55,
+        averageAmount: 25000,
         deadline: new Date(),
         grantName: 'Kappa',
         location: 'Batumi, Georgia',
-        areas: ['education', 'healthcare'],
+        areas: ['sports', 'healthcare'],
       },
       {
-        averageAmount: 55.55,
+        averageAmount: 100000,
         deadline: new Date(),
         grantName: 'Fargate',
         location: 'London, UK',
-        areas: ['education', 'healthcare'],
+        areas: ['education', 'business'],
       },
       {
-        averageAmount: 55.55,
+        averageAmount: 120000,
         deadline: new Date(),
         grantName: 'Universe',
         location: 'London, UK',
-        areas: ['education', 'healthcare'],
+        areas: ['finance', 'management'],
       },
       {
-        averageAmount: 55.55,
+        averageAmount: 75000,
         deadline: new Date(),
         grantName: 'Imea',
         location: 'Warsaw, Poland',
         areas: ['education', 'healthcare'],
       },
       {
-        averageAmount: 55.55,
+        averageAmount: 85000,
         deadline: new Date(),
         grantName: 'Vila',
         location: 'Vilnius, Lithuania',
-        areas: ['education', 'healthcare'],
+        areas: ['real estate'],
       },
     ];
 
@@ -93,13 +93,7 @@ export class GrantsSeed implements OnModuleInit {
       GrantOpportunity,
       'id' | '_id' | 'matchDate' | 'grant' | 'deleted'
     >[] = [
-      ...createdGrants.slice(0, 2).map((grant) => {
-        return {
-          status: GrantStatus.APPLIED,
-          grantId: grant._id,
-        };
-      }),
-      ...createdGrants.slice(2, 4).map((grant) => {
+      ...createdGrants.map((grant) => {
         return {
           status: GrantStatus.CREATED,
           grantId: grant._id,

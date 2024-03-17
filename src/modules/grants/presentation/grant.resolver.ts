@@ -10,7 +10,7 @@ export class GrantResolver {
   @Query(() => GetGrantOpportunityCardsResponseDTO)
   public async getGrantOpportunityCards(): Promise<GetGrantOpportunityCardsResponseDTO> {
     const edges = await this.grantsService.getNewGrantOpportunities();
-
+    
     return { edges };
   }
 
