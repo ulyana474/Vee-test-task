@@ -23,6 +23,7 @@ export class GrantsService {
         grantName: match.grant!.grantName,
         location: match.grant!.location,
         status: match.status,
+        matchDate: match.matchDate,
       };
     });
   }

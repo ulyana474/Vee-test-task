@@ -11,6 +11,7 @@ type GrantOpportunityCard {
   deadline: DateTime!
   location: String!
   status: String!
+  matchDate: DateTime!
   areas: [String!]!
 }
 

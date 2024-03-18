@@ -26,6 +26,9 @@ export class GrantOpportunityCardDTO {
   @Field()
   status: string;
 
+  @Field(() => Date)
+  matchDate: Date;
+
   @Field(() => [String])
   areas: string[];
 }
