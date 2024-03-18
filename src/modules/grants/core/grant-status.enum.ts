@@ -1,6 +1,6 @@
 export enum GrantStatus {
-  APPLIED = 'APPLIED',
-  ACCEPTED = 'ACCEPTED',
-  REJECTED = 'REJECTED',
-  CREATED = 'CREATED',
+  APPLIED = 'Applied',
+  ACCEPTED = 'Accepted',
+  REJECTED = 'Rejected',
+  CREATED = 'Created',
 }
